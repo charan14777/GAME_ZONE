@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Concept Crowdsourcing - Pitch Your Idea</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <style>
+        :root {
+            --primary-purple: #8b5cf6;
+            --dark-purple: #4c1d95;
+            --neon-blue: #2563eb;
+            --dark-bg: #0f172a;
+            --card-bg: #1e293b;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: #e2e8f0;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        }
+
+        .hero-banner {
+            background: linear-gradient(rgba(75, 0, 130, 0.7), rgba(0, 0, 0, 0.8)),
+                        url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMYaTx1chaNi3_wbSPP4jsurrbIGu-Ex_NSA&s');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, var(--primary-purple) 0%, transparent 100%);
+            opacity: 0.3;
+        }
+
+        .hero-banner .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .navbar {
+            background-color: rgba(15, 23, 42, 0.95) !important;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(139, 92, 246, 0.1);
+        }
+
+        .navbar-brand {
+            color: var(--primary-purple) !important;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+        .form-control, .form-select {
+            background-color: var(--card-bg);
+            border: 1px solid rgba(220, 215, 232, 0.2);
+            color: #e2e8f0;
+        }
+
+        .form-control:focus, .form-select:focus {
+            background-color: var(--card-bg);
+            border-color: var(--primary-purple);
+            color: #e2e8f0;
+            box-shadow: 0 0 0 0.25rem rgba(139, 92, 246, 0.25);
+        }
+
+        .form-label {
+            color: #e2e8f0;
+            font-weight: 500;
+        }
+
+        .form-check-label {
+            color: #e2e8f0;
+        }
+
+        .form-check-input:checked {
+            background-color: var(--primary-purple);
+            border-color: var(--primary-purple);
+        }
+
+        .btn-primary {
+            background-color: var(--primary-purple);
+            border-color: var(--primary-purple);
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--dark-purple);
+            border-color: var(--dark-purple);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(139, 92, 246, 0.4);
+        }
+
+        .form-container {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(139, 92, 246, 0.1);
+        }
+
+        .floating-images {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .floating-image {
+            position: absolute;
+            opacity: 0.1;
+            animation: float 15s infinite linear;
+        }
+
+        .image-1 { top: 10%; left: 5%; animation-delay: 0s; }
+        .image-2 { top: 60%; right: 10%; animation-delay: -5s; }
+        .image-3 { top: 30%; right: 30%; animation-delay: -10s; }
+
+        @keyframes float {
+            0% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+            100% { transform: translateY(0) rotate(0deg); }
+        }
+
+        .neon-border {
+            position: relative;
+        }
+
+        .neon-border::after {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, var(--primary-purple), var(--neon-blue));
+            border-radius: 17px;
+            z-index: -1;
+            opacity: 0.5;
+            filter: blur(8px);
+        }
+
+        /* Custom file input styling */
+        .custom-file-upload {
+            border: 2px dashed rgba(139, 92, 246, 0.3);
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .custom-file-upload:hover {
+            border-color: var(--primary-purple);
+            background: rgba(139, 92, 246, 0.1);
+        }
+
+        .upload-icon {
+            font-size: 2rem;
+            color: var(--primary-purple);
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="bi bi-controller me-2"></i>GameZone
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="home.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="collaboration.html">Collaborate</a></li>                    
+                    <li class="nav-item"><a class="nav-link" href="leaderboard.html">Leaderboard</a></li>
+                    <li class="nav-item"><a class="nav-link" href="ideas.html">Ideas</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="#">Pitch</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero-banner text-center">
+        <div class="floating-images">
+            <img src="https://cdn.pixabay.com/photo/2019/02/24/08/05/anime-4016284_1280.jpg" class="floating-image image-1" alt="" style="width: 100px;">
+            <img src="https://cdn.pixabay.com/photo/2023/01/23/13/37/anime-7738538_1280.jpg" class="floating-image image-2" alt="" style="width: 150px;">
+            <img src="https://cdn.pixabay.com/photo/2021/07/26/14/55/girl-6494823_1280.jpg" class="floating-image image-3" alt="" style="width: 120px;">
+        </div>
+        <div class="container">
+            <h1 class="display-4 fw-bold mb-4">Pitch Your Game Idea</h1>
+            <p class="lead mb-0">Share your vision and let the community help bring it to life!</p>
+        </div>
+    </header>
+
+    <main class="container my-5">
+        <div class="form-container neon-border">
+            <form id="pitchForm" class="needs-validation" novalidate>
+                <div class="mb-4">
+                    <label for="gameTitle" class="form-label">Game Title</label>
+                    <input type="text" class="form-control" id="gameTitle" name="gameTitle" required>
+                    <div class="invalid-feedback">Please provide a game title.</div>
+                </div>
+
+                <div class="mb-4">
+                    <label for="gameDescription" class="form-label">Description</label>
+                    <textarea class="form-control" id="gameDescription" name="gameDescription" rows="5" required></textarea>
+                    <div class="invalid-feedback">Please provide a game description.</div>
+                    <div id="charCount" class="form-text text-light-50">0 / 500 characters</div>
+                </div>
+
+                <div class="mb-4">
+                    <label for="gameGenre" class="form-label">Genre</label>
+                    <select class="form-select" id="gameGenre" name="gameGenre" required>
+                        <option value="">Select a genre</option>
+                        <option value="action">Action</option>
+                        <option value="adventure">Adventure</option>
+                        <option value="rpg">RPG</option>
+                        <option value="strategy">Strategy</option>
+                        <option value="simulation">Simulation</option>
+                        <option value="puzzle">Puzzle</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <div class="invalid-feedback">Please select a genre.</div>
+                </div>
+
+                <div class="mb-4">
+                    <label class="form-label">Target Audience</label>
+                    <div class="d-flex gap-4 flex-wrap">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="targetAudience" id="kids" value="kids" required>
+                            <label class="form-check-label" for="kids">Kids</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="targetAudience" id="teens" value="teens" required>
+                            <label class="form-check-label" for="teens">Teens</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="targetAudience" id="adults" value="adults" required>
+                            <label class="form-check-label" for="adults">Adults</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="targetAudience" id="all" value="all" required>
+                            <label class="form-check-label" for="all">All Ages</label>
+                        </div>
+                    </div>
+                    <div class="invalid-feedback">Please select a target audience.</div>
+                </div>
+
+                <div class="mb-4">
+                    <label for="estimatedBudget" class="form-label">Estimated Budget</label>
+                    <div class="input-group">
+                        <span class="input-group-text bg-dark text-light border-0">$</span>
+                        <input type="number" class="form-control" id="estimatedBudget" name="estimatedBudget" min="0" step="1000" required placeholder="Enter estimated budget">
+                    </div>
+                    <div class="invalid-feedback">Please provide an estimated budget.</div>
+                </div>
+
+                <div class="mb-4">
+                    <label class="form-label">Concept Art or Mockups (Optional)</label>
+                    <label for="conceptArt" class="custom-file-upload d-block">
+                        <i class="bi bi-cloud-upload upload-icon"></i>
+                        <div class="mb-2">Drag and drop your files here</div>
+                        <div class="text-muted small">or click to browse</div>
+                        <input type="file" class="form-control d-none" id="conceptArt" name="conceptArt" accept="image/*" multiple>
+                    </label>
+                </div>
+
+                <div class="d-grid gap-2">
+                    <button type="submit" class="btn btn-primary btn-lg">
+                        <i class="bi bi-rocket-takeoff me-2"></i>Submit Your Pitch
+                    </button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <center>
+            <p>&copy; 2025 GameZone. All Rights Reserved. <a href="privacy-policy.html">Privacy Policy</a> | <a href="terms-of-service.html">Terms of Service</a></p>
+        </center>
+    </footer>
+</body>
+
+
+    <script>
+        document.getElementById('pitchForm').addEventListener('submit', async function (event) {
+    event.preventDefault(); // Prevent default form submission
+
+    // Gather form data
+    const formData = new FormData(this);
+
+
+    // Prepare pitch data
+    const pitchData = {
+        gameTitle: formData.get('gameTitle'),
+        gameDescription: formData.get('gameDescription'),
+        gameGenre: formData.get('gameGenre'),
+        targetAudience: formData.get('targetAudience'),
+        estimatedBudget: formData.get('estimatedBudget'),
+        conceptArt: [], // Placeholder for uploaded images
+        upvotes: 0,
+    };
+
+    // Process uploaded files
+    const files = document.getElementById('conceptArt').files;
+    if (files.length > 0) {
+        for (let i = 0; i < files.length; i++) {
+            const file = files[i];
+
+            // Convert file to Base64 string
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                pitchData.conceptArt.push(e.target.result); // Store Base64 string
+                // Save the pitch data after reading all files
+                if (pitchData.conceptArt.length === files.length) {
+                    savePitchData(pitchData);
+                }
+            };
+            reader.readAsDataURL(file); // Read file as data URL
+        }
+    } else {
+        // If no files are uploaded, save the data immediately
+        savePitchData(pitchData);
+    }
+});
+
+function savePitchData(pitchData) {
+    // Retrieve existing ideas from localStorage
+    const ideas = JSON.parse(localStorage.getItem('ideas')) || [];
+    ideas.push(pitchData);
+
+    // Save updated ideas back to localStorage
+    localStorage.setItem('ideas', JSON.stringify(ideas));
+
+    // Redirect to ideas.html
+    window.location.href = 'ideas.html';
+}
+
+    </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

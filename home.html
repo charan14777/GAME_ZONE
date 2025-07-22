@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to bottom, #2d046e, #1a1a2e);
+            color: #0f0101;
+            overflow-x: hidden;
+        }
+
+        .navbar {
+            background-color: #4a0072;
+        }
+
+        .navbar-brand, .nav-link {
+            color: #eaeaea !important;
+        }
+
+        .nav-link:hover {
+            color: #ff6ec7 !important;
+            text-decoration: underline;
+        }
+
+        .hero-banner {
+            background: linear-gradient(rgba(58, 29, 97, 0.8), rgba(0, 0, 0, 0.8)), url('https://www.bigcountryhomepage.com/wp-content/uploads/sites/56/2021/11/WavePlayerSteamGameplayVid.mp4.00_00_40_14.Still001-1.jpg?w=900');
+            background-size: cover;
+            background-position: center;
+            color: #ba3ade;
+            padding: 100px 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        }
+
+        .btn-primary {
+            background: linear-gradient(45deg, #7209b7, #560bad);
+            border: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(45deg, #560bad, #480ca8);
+            box-shadow: 0 8px 20px rgba(114, 9, 183, 0.6);
+            transform: scale(1.05);
+        }
+
+        /* Glowing button with multiple colors cycling every 3 seconds */
+.btn-glow {
+    color: #fff;
+    background-color: transparent;
+    border: 2px solid #ff6ec7;
+    box-shadow: 0 0 5px #ff6ec7, 0 0 10px #ff6ec7, 0 0 15px #ff6ec7;
+    animation: glow 3s infinite alternate;
+    transition: 0.3s ease;
+}
+
+.btn-glow:hover {
+    background-color: #ff6ec7;
+    box-shadow: 0 0 25px #ff6ec7, 0 0 50px #ff6ec7, 0 0 75px #ff6ec7;
+    color: #fff;
+    transform: scale(1.1);
+}
+
+/* Keyframes for cycling through multiple colors */
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 5px #ff6ec7, 0 0 10px #ff6ec7, 0 0 15px #ff6ec7;
+        border-color: #ff6ec7;
+    }
+    25% {
+        box-shadow: 0 0 5px #ffb3ff, 0 0 10px #ffb3ff, 0 0 15px #ffb3ff;
+        border-color: #ffb3ff;
+    }
+    50% {
+        box-shadow: 0 0 5px #ffcc00, 0 0 10px #ffcc00, 0 0 15px #ffcc00;
+        border-color: #ffcc00;
+    }
+    75% {
+        box-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00, 0 0 15px #00ff00;
+        border-color: #00ff00;
+    }
+    100% {
+        box-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff, 0 0 15px #00ffff;
+        border-color: #00ffff;
+    }
+}
+
+
+        .card-img-top {
+            width: 100%;
+            height: auto;
+            max-height: 150px;
+            object-fit: cover;
+            border-radius: 15px;
+            transform: perspective(1000px) rotateY(10deg);
+            transition: transform 0.5s;
+        }
+
+        .idea-card:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        footer {
+            background-color: #4a0072;
+            color: #eaeaea;
+        }
+
+        footer a {
+            color: #b86ccd;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #ff6ec7;
+        }
+
+        .container h2 {
+            border-bottom: 2px solid #ff6ec7;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .hero-banner a {
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .hero-banner a:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .idea-card .card-title {
+            font-weight: bold;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="bi bi-controller me-2"></i>GameZone
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="collaboration.html">Collaborate</a></li>                    
+                    <li class="nav-item"><a class="nav-link" href="leaderboard.html">Leaderboard</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" onclick="logout()">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero-banner text-center">
+        <div class="container">
+            <h1 class="display-4" style="color:aliceblue;">Bring Your Game Ideas to Life!</h1>
+            <p class="lead"style="color:aliceblue;">Join our community of game enthusiasts and developers to create the next big hit.</p><br>
+            <a href="pitch.html" class="btn btn-glow btn-lg me-2">Pitch Your Idea</a>
+            &nbsp
+            <a href="ideas.html" class="btn btn-glow btn-lg me-2">Explore Ideas</a>
+        </div>
+    </header>
+
+    <main class="container my-5">
+        <section class="mb-5">
+            <h2 class="mb-4" style="color:aliceblue;">Trending Ideas</h2>
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <div class="col">
+                    <div class="card idea-card h-100">
+                        <img src="https://img.freepik.com/premium-photo/space-pirate-adventure_1234738-174770.jpg" class="card-img-top" alt="Space Pirate Adventure">
+                        <div class="card-body">
+                            <h5 class="card-title">Space Pirate Adventure</h5>
+                            <p class="card-text">Explore the galaxy as a space pirate, raiding ships and discovering treasures.</p>
+                            <button class="btn btn-sm btn-outline-primary vote-btn"><i class="bi bi-hand-thumbs-up"></i> Vote (42)</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card idea-card h-100">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgJsePXpVuC0X4P03keD0hckmWWNvgKKIkrw&s" class="card-img-top" alt="Time-Traveling Detective">
+                        <div class="card-body">
+                            <h5 class="card-title">Time-Traveling Detective</h5>
+                            <p class="card-text">Solve crimes across different time periods as a detective with a time machine.</p>
+                            <button class="btn btn-sm btn-outline-primary vote-btn"><i class="bi bi-hand-thumbs-up"></i> Vote (38)</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card idea-card h-100">
+                        <img src="https://www.pcgamesn.com/wp-content/sites/pcgamesn/2021/09/ecocentric-city-builders-terra-nil-6.jpg" class="card-img-top" alt="Eco City Builder">
+                        <div class="card-body">
+                            <h5 class="card-title">Eco City Builder</h5>
+                            <p class="card-text">Build and manage a sustainable city while balancing economic growth and environmental protection.</p>
+                            <button class="btn btn-sm btn-outline-primary vote-btn"><i class="bi bi-hand-thumbs-up"></i> Vote (55)</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-5">
+            <h2 class="mb-4" style="color:aliceblue;">Recently Added</h2>
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <div class="col">
+                    <div class="card idea-card h-100">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-1a-R_UEgeUb9p-FDeUMkv4PNrp8ChNURSA&s" class="card-img-top" alt="Virtual Pet Evolution">
+                        <div class="card-body">
+                            <h5 class="card-title">Virtual Pet Evolution</h5>
+                            <p class="card-text">Raise and evolve virtual pets in a dynamic ecosystem.</p>
+                            <button class="btn btn-sm btn-outline-primary vote-btn"><i class="bi bi-hand-thumbs-up"></i> Vote (28)</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card idea-card h-100">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKY6lSCSEyA3MYz6WLx_lnfhs7ElfSdeKAVw&s" class="card-img-top" alt="Mystic Jungle">
+                        <div class="card-body">
+                            <h5 class="card-title">Mystic Jungle</h5>
+                            <p class="card-text">Embark on a quest to uncover ancient secrets hidden in the jungle.</p>
+                            <button class="btn btn-sm btn-outline-primary vote-btn"><i class="bi bi-hand-thumbs-up"></i> Vote (63)</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card idea-card h-100">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTppMb6KfN-0aoKs9hSqkz1ZY-i35rjiA6NFQ&s" class="card-img-top" alt="Culinary Combat">
+                        <div class="card-body">
+                            <h5 class="card-title">Culinary Combat</h5>
+                            <p class="card-text">Engage in cooking battles using ingredients as weapons and dishes as power-ups.</p>
+                            <button class="btn btn-sm btn-outline-primary vote-btn"><i class="bi bi-hand-thumbs-up"></i> Vote (15)</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="mb-4"style="color:aliceblue;">Top Collaborators</h2>
+            <div class="row row-cols-2 row-cols-md-4 g-4">
+                <div class="col">
+                    <div class="card text-center">
+                        <img src="https://picsum.photos/100" class="card-img-top rounded-circle mx-auto mt-3" alt="Collaborator" style="width: 100px; height: 100px;">
+                        <div class="card-body">
+                            <h5 class="card-title">Jane Doe</h5>
+                            <p class="card-text"><small class="text-muted">5 Ideas, 120 Votes</small></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card text-center">
+                        <img src="https://picsum.photos/101" class="card-img-top rounded-circle mx-auto mt-3" alt="Collaborator" style="width: 100px; height: 100px;">
+                        <div class="card-body">
+                            <h5 class="card-title">John Smith</h5>
+                            <p class="card-text"><small class="text-muted">3 Ideas, 95 Votes</small></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card text-center">
+                        <img src="https://picsum.photos/102" class="card-img-top rounded-circle mx-auto mt-3" alt="Collaborator" style="width: 100px; height: 100px;">
+                        <div class="card-body">
+                            <h5 class="card-title">Alice Johnson</h5>
+                            <p class="card-text"><small class="text-muted">4 Ideas, 88 Votes</small></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card text-center">
+                        <img src="https://picsum.photos/103" class="card-img-top rounded-circle mx-auto mt-3" alt="Collaborator" style="width: 100px; height: 100px;">
+                        <div class="card-body">
+                            <h5 class="card-title">Bob Williams</h5>
+                            <p class="card-text"><small class="text-muted">2 Ideas, 75 Votes</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    
+
+    <footer>
+        <center>
+            <p>&copy; 2025 GameZone. All Rights Reserved. <a href="privacy-policy.html">Privacy Policy</a> | <a href="terms-of-service.html">Terms of Service</a></p>
+        </center>
+        
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function logout() {
+    // Clear all local storage/session storage data
+    localStorage.clear();
+    sessionStorage.clear();
+
+    // Redirect to the logout endpoint
+    window.location.href = 'index.html';
+}
+
+    </script>
+</body>
+</html>

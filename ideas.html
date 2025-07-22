@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Concept Crowdsourcing - Ideas Library</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <style>
+        .hero-banner {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://media.tenor.com/loWQQ468aVkAAAAM/clokz.gif');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 50px 0;
+        }
+        .idea-card {
+            transition: transform 0.3s;
+        }
+        .idea-card:hover {
+            transform: translateY(-5px);
+        }
+        .navbar {
+            background-color: #4a0072;
+        }
+
+        .navbar-brand, .nav-link {
+            color: #eaeaea !important;
+        }
+
+        .nav-link:hover {
+            color: #ff6ec7 !important;
+            text-decoration: underline;
+        }
+        body{
+            background: linear-gradient(to bottom, #2d046e, #1a1a2e);
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">GameIdeas</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="home.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="collaboration.html">Collaborate</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="#">Ideas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="leaderboard.html">Leaderboard</a></li>
+                    <li class="nav-item"><a class="nav-link" href="pitch.html">Pitch</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero-banner text-center">
+        <div class="container">
+            <h1 class="display-4">Ideas Library</h1>
+            <p class="lead">Explore, vote, and collaborate on game concepts from our community!</p>
+        </div>
+    </header>
+
+    <main class="container my-5">
+        <div class="row mb-4">
+            <div class="col-md-6">
+                <input type="text" class="form-control" placeholder="Search ideas...">
+            </div>
+            <div class="col-md-6">
+                <div class="d-flex justify-content-end">
+                    <select class="form-select me-2" style="width: auto;">
+                        <option value="">All Genres</option>
+                        <option value="action">Action</option>
+                        <option value="adventure">Adventure</option>
+                        <option value="rpg">RPG</option>
+                        <option value="strategy">Strategy</option>
+                        <option value="simulation">Simulation</option>
+                        <option value="puzzle">Puzzle</option>
+                    </select>
+                    <select class="form-select" style="width: auto;">
+                        <option value="newest">Newest</option>
+                        <option value="popular">Most Popular</option>
+                        <option value="trending">Trending</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col">
+                <div class="card idea-card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Space Pirate Adventure</h5>
+                        <p class="card-text">Explore the galaxy as a space pirate, raiding ships and discovering treasures.</p>
+                        <p class="card-text"><small class="text-muted">Genre: Adventure | By: SpaceExplorer</small></p>
+                    </div>
+                    <div class="card-footer bg-transparent border-top-0">
+                        <button class="btn btn-sm btn-outline-primary me-2"><i class="bi bi-hand-thumbs-up"></i> Upvote (42)</button>
+                        <button class="btn btn-sm btn-outline-secondary"><i class="bi bi-bookmark"></i> Save</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card idea-card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Time-Traveling Detective</h5>
+                        <p class="card-text">Solve crimes across different time periods as a detective with a time machine.</p>
+                        <p class="card-text"><small class="text-muted">Genre: Mystery | By: TimeLord</small></p>
+                    </div>
+                    <div class="card-footer bg-transparent border-top-0">
+                        <button class="btn btn-sm btn-outline-primary me-2"><i class="bi bi-hand-thumbs-up"></i> Upvote (38)</button>
+                        <button class="btn btn-sm btn-outline-secondary"><i class="bi bi-bookmark"></i> Save</button>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="col">
+                <div class="card idea-card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Eco City Builder</h5>
+                        <p class="card-text">Build and manage a sustainable city while balancing economic growth and environmental protection.</p>
+                        <p class="card-text"><small class="text-muted">Genre: Simulation | By: GreenThumb</small></p>
+                    </div>
+                    <div class="card-footer bg-transparent border-top-0">
+                        <button class="btn btn-sm btn-outline-primary me-2"><i class="bi bi-hand-thumbs-up"></i> Upvote (55)</button>
+                        <button class="btn btn-sm btn-outline-secondary"><i class="bi bi-bookmark"></i> Save</button>
+                    </div>
+                </div>
+            </div> -->
+            <!-- <div class="col">
+                <div class="card idea-card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Virtual Pet Evolution</h5>
+                        <p class="card-text">Raise and evolve virtual pets in a dynamic ecosystem.</p>
+                        <p class="card-text"><small class="text-muted">Genre: Simulation | By: PetLover</small></p>
+                    </div>
+                    <div class="card-footer bg-transparent border-top-0">
+                        <button class="btn btn-sm btn-outline-primary me-2"><i class="bi bi-hand-thumbs-up"></i> Upvote (12)</button>
+                        <button class="btn btn-sm btn-outline-secondary"><i class="bi bi-bookmark"></i> Save</button>
+                    </div>
+                </div>
+            </div> -->
+            <!-- <div class="col">
+                <div class="card idea-card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Steampunk Puzzle Platformer</h5>
+                        <p class="card-text">Navigate through a steampunk world solving intricate mechanical puzzles.</p>
+                        <p class="card-text"><small class="text-muted">Genre: Puzzle | By: GearHead</small></p>
+                    </div>
+                    <div class="card-footer bg-transparent border-top-0">
+                        <button class="btn btn-sm btn-outline-primary me-2"><i class="bi bi-hand-thumbs-up"></i> Upvote (8)</button>
+                        <button class="btn btn-sm btn-outline-secondary"><i class="bi bi-bookmark"></i> Save</button>
+                    </div>
+                </div>
+            </div> -->
+            <div class="col">
+                <div class="card idea-card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Culinary Combat</h5>
+                        <p class="card-text">Engage in cooking battles using ingredients as weapons and dishes as power-ups.</p>
+                        <p class="card-text"><small class="text-muted">Genre: Action | By: ChefMaster</small></p>
+                    </div>
+                    <div class="card-footer bg-transparent border-top-0">
+                        <button class="btn btn-sm btn-outline-primary me-2"><i class="bi bi-hand-thumbs-up"></i> Upvote (15)</button>
+                        <button class="btn btn-sm btn-outline-danger" onclick=``deleteIdea(${index})``>
+                            <i class="bi bi-trash"></i> Delete
+                        </button>
+                        <button class="btn btn-sm btn-outline-secondary"><i class="bi bi-bookmark"></i> Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <nav aria-label="Page navigation" class="mt-4">
+            <ul class="pagination justify-content-center">
+                <li class="page-item disabled">
+                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                </li>
+                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                    <a class="page-link" href="#">Next</a>
+                </li>
+            </ul>
+        </nav>
+    </main>
+
+    <footer class="bg-dark text-light py-4 mt-5">
+        <div class="container text-center">
+            <p>&copy; 2025 Game Concept Crowdsourcing. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            const ideaContainer = document.querySelector('.row.row-cols-1.row-cols-md-3.g-4');
+    
+            // Retrieve ideas from localStorage
+            const ideas = JSON.parse(localStorage.getItem('ideas')) || [];
+    
+            // Clear existing dummy cards (if any)
+            ideaContainer.innerHTML = '';
+    
+            // Generate cards dynamically
+            ideas.forEach((idea, index) => {
+                let conceptArtHTML = '';
+    
+                // Add images if available
+                if (idea.conceptArt.length > 0) {
+                    conceptArtHTML = idea.conceptArt
+                        .map((art) => `<img src="${art}" class="img-fluid mb-2" alt="Concept Art">`)
+                        .join('');
+                }
+    
+                const ideaCard = `
+                    <div class="col">
+                        <div class="card idea-card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title">${idea.gameTitle}</h5>
+                                <p class="card-text">${idea.gameDescription}</p>
+                                <p class="card-text"><small class="text-muted">Genre: ${idea.gameGenre}</small></p>
+                                ${conceptArtHTML}
+                            </div>
+                            <div class="card-footer bg-transparent border-top-0">
+                                <button class="btn btn-sm btn-outline-primary me-2" onclick="upvoteIdea(${index})">
+                                    <i class="bi bi-hand-thumbs-up"></i> Upvote (${idea.upvotes})
+                                </button>
+                                <button class="btn btn-sm btn-outline-danger" onclick="deleteIdea(${index})">
+                                  <i class="bi bi-trash"></i> Delete
+                                 </button>
+                                <button class="btn btn-sm btn-outline-secondary">
+                                    <i class="bi bi-bookmark"></i> Save
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                ideaContainer.innerHTML += ideaCard;
+            });
+    
+            // If no ideas are present
+            if (ideas.length === 0) {
+                ideaContainer.innerHTML = '<p class="text-center">No ideas found. Submit your pitch!</p>';
+            }
+        });
+    
+        // Function to handle upvote
+        function upvoteIdea(index) {
+            const ideas = JSON.parse(localStorage.getItem('ideas')) || [];
+            if (ideas[index]) {
+                ideas[index].upvotes += 1; // Increment the upvote count
+                localStorage.setItem('ideas', JSON.stringify(ideas)); // Save the updated ideas
+                // Update the upvote button text
+                document.querySelectorAll('.btn-outline-primary')[index].innerHTML = `<i class="bi bi-hand-thumbs-up"></i> Upvote (${ideas[index].upvotes})`;
+            }
+        }
+
+        function deleteIdea(index) {
+            const ideas = JSON.parse(localStorage.getItem('ideas')) || [];
+            if (ideas[index]) {
+                ideas.splice(index, 1); // Remove the idea from the array
+                localStorage.setItem('ideas', JSON.stringify(ideas)); // Save the updated ideas
+                // Reload the page to reflect changes
+                window.location.reload();
+            }
+        }
+    </script>
+    
+</body>
+</html>

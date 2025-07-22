@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Sign Up</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            /* background: linear-gradient(135deg, #84fab0, #8fd3f4); */
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .container5 {
+            text-align: center;
+            max-width: 400px;
+            background: transparent;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 8px 30px #34aeae;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #34aeae;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+            
+        }
+
+        label {
+            display: block;
+            text-align: left;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        input {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background: #4db6ac;
+            color: #fff;
+            font-weight: bold;
+            font-size: 1rem;
+            text-transform: uppercase;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .btn:hover {
+            background: #00897b;
+        }
+        .links {
+            margin-top: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            font-size: 1rem;
+        }
+
+        .links a {
+            color: #4db6ac;
+            text-decoration: none;
+        }
+
+        .links a:hover {
+            color: #00897b;
+        }
+        .gender-input {
+            width: 300px;
+            height: 50px;
+            background-color: #ffffff;
+            border: 1px solid #dad9d9;
+            font-size: 16px;
+            padding: 8px 12px;
+        }
+        .background-clip{
+    position:fixed;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    }
+    @media (min-aspect-ratio:16/9) {
+    .background-clip{
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-aspect-ratio:16/9) {
+    .background-clip{
+        width: auto;
+        height: 100%;
+    }
+}
+    </style>
+</head>
+<body>
+
+    <video autoplay loop muted plays-inline class="background-clip" id="myVideo">
+        <source src="210824.mp4" type="video/mp4">
+    </video>
+    <div class="container5">        
+
+        <h1>User Sign Up</h1>
+        <form action="users/sign_up" method="POST">
+            <div class="form-group">
+                <label for="username" style="color: #34aeae;">Username</label>
+                <input type="text" style="background-color: transparent;color: #fff;" id="username" name="username" placeholder="Enter your username" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email" style="color: #34aeae;">Email</label>
+                <input type="email" style="background-color: transparent;color: #fff;" id="email" name="email" placeholder="Enter your email" required>         
+            </div>
+
+            <div class="form-group">
+                <label for="phno" style="color: #34aeae;">Mobile No</label>
+                <input type="text" style="background-color: transparent;color: #fff;" style="color: #fff;" id="phno" name="phno" placeholder="Enter your Mobile Number" required>                              
+            </div>
+
+            <div class="form-group" >
+                <label for="gender" class="gender-label" style="color: #34aeae;">Gender</label>
+                <select style="background-color: transparent;color: #bdc7c7;" id="gender"  name="gender" class="gender-input" required>
+                    <option  value="" disabled selected>Select your gender</option>
+                    <option value="male" style="color: #333;">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>                           
+            </div>           
+
+            <div class="form-group">
+                <label for="password" style="color: #34aeae;">Password</label>
+                <input type="password" id="password" style="background-color: transparent;color: #fff;" name="password" placeholder="Enter your password" required>
+            </div>
+           
+            <button type="submit" class="btn" id ="submit" value="submit">Create Account</button>
+        </form>
+        <br>
+        <!-- <a href="home.html" class="btn">Continue as guest</a> -->
+    </div>
+</body>
+    <script>
+        const form = document.querySelector('form');
+
+form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const formData = {
+        username: document.getElementById('username').value,
+        email: document.getElementById('email').value,
+        phno: document.getElementById('phno').value,
+        gender: document.getElementById('gender').value,
+        password: document.getElementById('password').value,
+    };
+
+    try {
+        const response = await fetch('/users/signup', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(formData),
+        });
+
+        const result = await response.json();
+
+        if (response.ok) {
+            alert('Signup successful! Redirecting to login page...');
+            window.location.href = '/UserLogin.html'; // Redirect to login page
+        } else {
+            alert('Signup failed: ' + result.message);
+        }
+    } catch (error) {
+        console.error('Error during signup:', error);
+        alert('Signup failed due to a server error.');
+    }
+});
+
+
+    </script>
+    
+</body>
+</html>

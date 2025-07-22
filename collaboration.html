@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Concept Crowdsourcing - Collaboration Hub</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <style>
+        .hero-banner {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://picsum.photos/1200/400');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 50px 0;
+        }
+        .task-card {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">GameIdeas</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="home.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="#">Collaborate</a></li>
+                    <li class="nav-item"><a class="nav-link" href="ideas.html">Ideas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="leaderboard.html">Leaderboard</a></li>
+                    <li class="nav-item"><a class="nav-link" href="pitch.html">Pitch</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero-banner text-center">
+        <div class="container">
+            <h1 class="display-4">Collaboration Hub</h1>
+            <p class="lead">Work together to bring game ideas to life</p>
+        </div>
+    </header>
+
+    <main class="container my-5">
+        <div class="row">
+            <div class="col-md-8">
+                <h2 class="mb-4">Space Pirate Adventure - Development Board</h2>
+                <div class="row">
+                    <div class="col-md-4">
+                        <h4>To Do</h4>
+                        <div class="card mb-3 task-card">
+                            <div class="card-body">
+                                <h5 class="card-title">Design ship upgrade system</h5>
+                                <p class="card-text">Create a flowchart for the ship upgrade mechanics</p>
+                                <span class="badge bg-secondary">Design</span>
+                            </div>
+                        </div>
+                        <div class="card mb-3 task-card">
+                            <div class="card-body">
+                                <h5 class="card-title">Implement basic space combat</h5>
+                                <p class="card-text">Develop a prototype for space combat mechanics</p>
+                                <span class="badge bg-primary">Coding</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <h4>In Progress</h4>
+                        <div class="card mb-3 task-card">
+                            <div class="card-body">
+                                <h5 class="card-title">Create alien species concepts</h5>
+                                <p class="card-text">Design 5 unique alien races with distinct characteristics</p>
+                                <span class="badge bg-info">Art</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <h4>Done</h4>
+                        <div class="card mb-3 task-card">
+                            <div class="card-body">
+                                <h5 class="card-title">Write game storyline</h5>
+                                <p class="card-text">Develop the main plot and character backstories</p>
+                                <span class="badge bg-success">Writing</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn btn-primary mt-3">Add New Task</button>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Team Chat</h5>
+                        <div class="mb-3" style="height: 300px; overflow-y: scroll;">
+                            <div class="input-group">
+                                <input id="message-input" type="text" class="form-control" placeholder="Type your message...">
+                                <button id="send-message" class="btn btn-outline-secondary">Send</button>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Type your message...">
+                            <button class="btn btn-outline-secondary" type="button">Send</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">File Sharing</h5>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                Game_Design_Doc_v1.2.pdf
+                                <a href="#" class="btn btn-sm btn-outline-primary">Download</a>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                Concept_Art_Aliens.zip
+                                <a href="#" class="btn btn-sm btn-outline-primary">Download</a>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                Spaceship_3D_Models.blend
+                                <a href="#" class="btn btn-sm btn-outline-primary">Download</a>
+                            </li>
+                        </ul>
+                        <button class="btn btn-outline-primary w-100 mt-3">Upload New File</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Project Progress</h5>
+                        <div class="progress mb-3">
+                            <div class="progress-bar" role="progressbar" style="width: 35%;" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100">35%</div>
+                        </div>
+                        <p>Next milestone: Alpha Release</p>
+                        <button class="btn btn-outline-success w-100">Update Progress</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-dark text-light py-4 mt-5">
+        <div class="container text-center">
+            <p>&copy; 2023 Game Concept Crowdsourcing. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const chatContainer = document.getElementById("chat-container");
+        const messageInput = document.getElementById("message-input");
+        const sendMessageButton = document.getElementById("send-message");
+    
+        const API_URL = "http://localhost:3000";
+    
+        // Fetch and display messages
+        async function fetchMessages() {
+            const res = await fetch(`${API_URL}/messages`);
+            const messages = await res.json();
+    
+            chatContainer.innerHTML = "";
+            messages.forEach((msg) => {
+                const messageDiv = document.createElement("div");
+                messageDiv.classList.add("mb-2");
+                messageDiv.innerHTML = `
+                    <strong>${msg.username}:</strong> ${msg.message}
+                    <button class="btn btn-sm btn-link reply-btn" data-id="${msg._id}">Reply</button>
+                    <div class="replies">
+                        ${msg.replies
+                            .map(
+                                (reply) => `
+                        <div><strong>${reply.username}:</strong> ${reply.reply}</div>
+                        `
+                            )
+                            .join("")}
+                    </div>
+                `;
+                chatContainer.appendChild(messageDiv);
+            });
+    
+            // Add reply functionality
+            document.querySelectorAll(".reply-btn").forEach((btn) => {
+                btn.addEventListener("click", (e) => {
+                    const messageId = e.target.getAttribute("data-id");
+                    const reply = prompt("Type your reply:");
+                    if (reply) {
+                        replyToMessage(messageId, reply);
+                    }
+                });
+            });
+        }
+    
+        // Send a new message
+        async function sendMessage() {
+            const message = messageInput.value.trim();
+            if (message) {
+                await fetch(`${API_URL}/messages`, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ username: "You", message }),
+                });
+                messageInput.value = "";
+                fetchMessages();
+            }
+        }
+    
+        // Reply to a message
+        async function replyToMessage(messageId, reply) {
+            await fetch(`${API_URL}/messages/${messageId}/reply`, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ username: "You", reply }),
+            });
+            fetchMessages();
+        }
+    
+        // Event Listeners
+        sendMessageButton.addEventListener("click", sendMessage);
+    
+        // Initial fetch
+        fetchMessages();
+        setInterval(fetchMessages, 5000); // Refresh messages every 5 seconds
+    </script>
+    
+</body>
+</html>

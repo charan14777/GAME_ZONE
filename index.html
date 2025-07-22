@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Welcome</title>
+    <style>
+        *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins';
+}
+
+.container{
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(25, 1, 1, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:75px;
+}
+.container1{
+    text-align: center;
+    max-width: 650px;
+    background: rgba(14, 0, 11, 0.1);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 8px 30px #34aeae;
+    animation: glow 3s infinite alternate;
+    transition: 0.3s ease;
+}
+.container3{
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(25, 1, 1, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content{
+    text-align: center;
+}
+
+.content h1{
+    font-size: 95px;
+    color: #fff;
+    margin-bottom: 50px;
+}
+
+.content a{
+    font-size: 23px;
+    color: #fff;
+    text-decoration: none;
+    border: 2px solid #fff;
+    padding: 15px 25px;
+    border-radius: 50px;
+    transition: 0.3s;
+}
+
+.content a:hover{
+    background-color: #fff;
+    color: #000;
+}
+
+.background-clip{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+}
+p {
+    font-size: 1.8rem; /* Increased font size */
+    line-height: 2;    /* Increased line spacing for readability */
+    margin-bottom: 2rem;
+    color: #ebf2f0;    /* Slightly darker for better readability */
+}
+
+
+@media (min-aspect-ratio:16/9) {
+    .background-clip{
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-aspect-ratio:16/9) {
+    .background-clip{
+        width: auto;
+        height: 100%;
+    }
+}
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background: #34aeae;
+            color: #050909; /* Matches text for consistency */
+            font-weight: bold;
+            font-size: 1rem;
+            text-transform: uppercase;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+        }
+    
+        .btn:hover {
+            background: #db2c72; /* Darker background on hover */
+            color: #fff;        /* White text on hover */
+            transform: scale(1.1); /* Slight zoom effect */
+        }
+        @keyframes glow {
+    0% {
+        box-shadow: 0 0 5px #ff6ec7, 0 0 10px #ff6ec7, 0 0 15px #ff6ec7;
+        border-color: #ff6ec7;
+    }
+    25% {
+        box-shadow: 0 0 5px #ffb3ff, 0 0 10px #ffb3ff, 0 0 15px #ffb3ff;
+        border-color: #ffb3ff;
+    }
+    50% {
+        box-shadow: 0 0 5px #e7d17b, 0 0 10px #e7d17b, 0 0 15px #e7d17b;
+        border-color: #e7d17b;
+    }
+    75% {
+        box-shadow: 0 0 5px #87ef87, 0 0 10px #87ef87, 0 0 15px #87ef87;
+        border-color: #87ef87;
+    }
+    100% {
+        box-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff, 0 0 15px #00ffff;
+        border-color: #00ffff;
+    }
+}
+    </style>
+    
+</head>
+<body>
+    
+    <div class="container">
+
+        <video autoplay loop muted plays-inline class="background-clip" id="myVideo">
+            <source src="214405.mp4" type="video/mp4" >
+        </video>
+        <body>
+            <div class="container1">
+                <h1 style="color:#34aeae; font-size: 3.5rem;">Welcome to GameZone</h1>
+                <br>
+                <p>
+                    Perfect choice for your Game <br>CrowdSourcing.
+                </p>
+                <!-- Corrected the path for the "Get Started" button -->
+                <a href="index2.html" class="btn">LET'S GO ➡</a>
+            </div>
+        </body>
+        
+    </div>
+
+</body>
+
+<script>
+    const video = document.getElementById('myVideo');
+    video.playbackRate = 0.4;
+</script>
+</html>
